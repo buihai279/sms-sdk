@@ -1,0 +1,44 @@
+{
+  "name": "DiagVN/fpt-sdk",
+  "description": "FPT SMS vendor custom by Diag",
+  "keywords": [
+    "framework"
+  ],
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Bradley Nguyen",
+      "email": "giang.nguyen@diag.vn",
+      "homepage": "https://github.com/GiangBeo"
+    }
+  ],
+  "require": {
+    "php": "^7.2.5 || ^8.0",
+    "ext-json": "*",
+    "guzzlehttp/guzzle": "^7.0.1",
+    "psr/log": "^1.1 || ^2.0 || ^3.0",
+    "illuminate/support": "^5.2|^6.0|^7.0|^8.0",
+    "nesbot/carbon": "^2.53.1"
+  },
+  "require-dev": {
+    "ext-curl": "*",
+    "bamarni/composer-bin-plugin": "^1.4.1"
+  },
+  "suggest": {
+    "ext-curl": "Required for CURL handler support",
+    "ext-intl": "Required for Internationalized Domain Name (IDN) support",
+    "psr/log": "Required for using the Log middleware"
+  },
+  "autoload": {
+    "psr-4": {
+      "MixPanel\\": "lib/"
+    }
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "MixPanel\\Providers\\MixPanelProvider"
+      ]
+    }
+  }
+}
