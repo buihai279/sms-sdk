@@ -4,12 +4,6 @@ namespace DiagVN\Services\Fpt\TechAPI\Auth;
 
 use DiagVN\Services\Fpt\TechAPI\Constant;
 
-/**
- * Access token singleton class
- * 
- * @author ISC--DAIDP
- * @since 22/09/2015
- */
 final class AccessToken
 {
     const SESSION_NAME = 'tech_sms_oauth';

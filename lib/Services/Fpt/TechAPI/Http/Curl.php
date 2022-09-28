@@ -3,7 +3,7 @@
 namespace DiagVN\Services\Fpt\TechAPI\Http;
 
 use DiagVN\Services\Fpt\TechAPI\Constant;
-use DiagVN\Services\Fpt\TechAPI\Error;
+use GuzzleHttp\Client;
 
 class Curl
 {
@@ -12,37 +12,25 @@ class Curl
      */
     public function execute(Request $request)
     {
-        $curl = curl_init();
-
-        if ($request->getPostBody()) {
-            curl_setopt($curl, CURLOPT_POSTFIELDS, $request->getPostBody());
-        }
-
+        $client = new Client(
+            [
+                'verify' => false,
+                'timeout'  => Constant::getTimeout(),
+            ]
+        );
         $requestHeaders = $request->getRequestHeaders();
-        if ($requestHeaders && is_array($requestHeaders)) {
-            $curlHeaders = array();
-            foreach ($requestHeaders as $k => $v) {
-                $curlHeaders[] = "$k: $v";
-            }
-            curl_setopt($curl, CURLOPT_HTTPHEADER, $curlHeaders);
-        }
+        $requestHeaders = array_merge($requestHeaders, [
+            'User-Agent' => $request->getUserAgent()
+        ]);
+        $response = $client->request(
+            $request->getRequestMethod(),
+            $request->getUrl(),
+            [
+                'json' => $request->getPostBody(),
+                'headers' =>  $requestHeaders,
+            ]
+        );
 
-        curl_setopt($curl, CURLOPT_URL, $request->getUrl());
-        curl_setopt($curl, CURLOPT_TIMEOUT, Constant::getTimeout());
-        curl_setopt($curl, CURLOPT_CUSTOMREQUEST, $request->getRequestMethod());
-        curl_setopt($curl, CURLOPT_USERAGENT, $request->getUserAgent());
-
-        curl_setopt($curl, CURLOPT_FOLLOWLOCATION, false);
-        curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
-        curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
-        //curl_setopt($curl, CURLOPT_HEADER, true);
-
-        $response = curl_exec($curl);
-
-        if ($response === false) {
-            Error::setError(Error::CURL_ERROR, curl_error($curl));
-        }
-
-        return json_decode($response, true);
+        return json_decode($response->getBody()->getContents(), true);
     }
 }

@@ -6,14 +6,14 @@ use DiagVN\Services\Fpt\TechAPI\Constant;
 
 class Request
 {
-    const CONTENT_TYPE_JSOIN = 'application/json';
+    const CONTENT_TYPE_JSON = 'application/json';
 
     protected $endpoint = '';
     protected $action   = '';
     protected $method = 'POST';
     protected $params = array();
     protected $headers = array();
-    protected $contentType = self::CONTENT_TYPE_JSOIN;
+    protected $contentType = self::CONTENT_TYPE_JSON;
 
 
     /**
@@ -85,13 +85,7 @@ class Request
      */
     public function getPostBody()
     {
-        switch ($this->contentType) {
-            case self::CONTENT_TYPE_JSOIN:
-                return json_encode($this->params);
-
-            default:
-                return $this->params;
-        }
+        return $this->params;
     }
 
 

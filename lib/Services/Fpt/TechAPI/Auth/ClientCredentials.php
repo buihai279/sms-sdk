@@ -8,12 +8,6 @@ use DiagVN\Services\Fpt\TechAPI\Http\Request;
 use DiagVN\Services\Fpt\TechAPI\Http\Curl;
 use DiagVN\Services\Fpt\TechAPI\Error;
 
-/**
- * Client credentials grant type
- * 
- * @author ISC--DAIDP
- * @since 21/09/2015
- */
 class ClientCredentials
 {
     const GRANT_TYPE = 'client_credentials';
@@ -31,7 +25,6 @@ class ClientCredentials
         $this->client = $client;
         $this->curl   = new Curl();
     }
-
 
     /**
      * Request token to authorization
