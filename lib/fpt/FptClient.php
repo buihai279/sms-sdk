@@ -8,6 +8,7 @@ use DiagVN\Fpt\TechAPI\Auth\ClientCredentials;
 use DiagVN\Fpt\TechAPI\Client;
 use DiagVN\Fpt\TechAPI\Constant;
 use DiagVN\Fpt\TechAPI\Exception;
+use DiagVN\SmsClient;
 
 class FptClient implements SmsClient
 {

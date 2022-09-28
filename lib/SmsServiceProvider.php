@@ -1,6 +1,6 @@
 <?php
 
-namespace DiagVN\Providers;
+namespace DiagVN;
 
 use DiagVN\Fpt\FptClient;
 use Illuminate\Support\ServiceProvider;

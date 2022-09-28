@@ -1,6 +1,6 @@
 <?php
 
-namespace DiagVN\Fpt;
+namespace DiagVN;
 
 use DiagVN\Fpt\TechAPI\Exception;
 
