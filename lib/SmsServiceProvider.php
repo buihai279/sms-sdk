@@ -23,13 +23,13 @@ class SmsServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->publishes([
-            __DIR__ . '/../database/migrations/' => database_path('migrations/my-package'),
+            __DIR__ . '/database/migrations/' => database_path('migrations/sms-sdk'),
         ], 'fpt-package-migrations');
 
         $this->publishes(
             [
                 //file source => file destination below
-                __DIR__ . '/lib/config/sms.php' => config_path('sms.php'),
+                __DIR__ . '/config/sms.php' => config_path('sms.php'),
                 //you can also add more configs here
             ]
         );
