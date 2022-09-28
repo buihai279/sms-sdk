@@ -42,9 +42,11 @@ class SmsServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        // Bind Fpt Client in Service Container.
-        $this->app->singleton(FptClient::class, function ($app) {
-            return $this->createFptClient($app['config']);
+
+        $this->app->bind('sms', function () {
+            return collect([
+                'fpt' => $this->createFptClient($this->app['config'])
+            ]);
         });
     }
 
