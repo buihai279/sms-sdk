@@ -1,6 +1,6 @@
 <?php
 
-namespace DiagVN\Fpt;
+namespace DiagVN;
 
 use DiagVN\Fpt\TechAPI\Api\SendBrandnameOtp;
 use DiagVN\Fpt\TechAPI\Auth\AccessToken;

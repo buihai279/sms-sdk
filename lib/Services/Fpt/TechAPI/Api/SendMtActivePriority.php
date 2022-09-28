@@ -1,21 +1,45 @@
 <?php
 
-namespace DiagVN\Fpt\TechAPI\Api;
+namespace DiagVN\Services\Fpt\TechAPI\Api;
 
-class SendBrandnameAds implements ApiInterface
+class SendMtActivePriority implements ApiInterface
 {
-    const ACTION = '/api/push-brandname-ads';
+    const ACTION = '/api/push-mtactive-priority';
 
+    /**
+     * @var int
+     */
+    protected $MOId       = 0;
 
     /**
      * @var string
      */
-    protected $CampaignCode = '';
+    protected $Telco      = '';
 
     /**
      * @var string
      */
-    protected $PhoneList      = '';
+    protected $ServiceNum = '';
+
+    /**
+     * @var string
+     */
+    protected $Phone      = '';
+
+    /**
+     * @var string
+     */
+    protected $Syntax     = '';
+
+    /**
+     * @var string
+     */
+    protected $Message    = '';
+
+    /**
+     * @var int
+     */
+    protected $Priority   = 5;
 
 
     /**
@@ -53,6 +77,7 @@ class SendBrandnameAds implements ApiInterface
     public function toArray()
     {
         $arrData = get_object_vars($this);
+        $arrData['Message'] = base64_encode($arrData['Message']);
 
         return $arrData;
     }

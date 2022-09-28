@@ -1,35 +1,40 @@
 <?php
 
-namespace DiagVN\Fpt\TechAPI\Api;
+namespace DiagVN\Services\Fpt\TechAPI\Api;
 
-class CreateCampaign implements ApiInterface
+class SendMtActive implements ApiInterface
 {
-    const ACTION = '/api/create-campaign';
+    const ACTION = '/api/push-mtactive';
+
+    /**
+     * @var int
+     */
+    protected $MOId       = 0;
 
     /**
      * @var string
      */
-    protected $CampaignName = '';
+    protected $Telco      = '';
 
     /**
      * @var string
      */
-    protected $BrandName = '';
+    protected $ServiceNum = '';
+
+    /**
+     * @var string
+     */
+    protected $Phone      = '';
+
+    /**
+     * @var string
+     */
+    protected $Syntax     = '';
 
     /**
      * @var string
      */
     protected $Message    = '';
-
-    /**
-     * @var string
-     */
-    protected $ScheduleTime = '';
-
-    /**
-     * @var int
-     */
-    protected $Quota    = 1;
 
 
     /**
@@ -67,6 +72,7 @@ class CreateCampaign implements ApiInterface
     public function toArray()
     {
         $arrData = get_object_vars($this);
+        $arrData['Message'] = base64_encode($arrData['Message']);
 
         return $arrData;
     }

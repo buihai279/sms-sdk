@@ -1,9 +1,9 @@
 <?php
 
-namespace DiagVN\Fpt\TechAPI\Http;
+namespace DiagVN\Services\Fpt\TechAPI\Http;
 
-use DiagVN\Fpt\TechAPI\Constant;
-use DiagVN\Fpt\TechAPI\Error;
+use DiagVN\Services\Fpt\TechAPI\Constant;
+use DiagVN\Services\Fpt\TechAPI\Error;
 
 class Curl
 {

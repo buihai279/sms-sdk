@@ -1,9 +1,8 @@
 <?php
 
-namespace DiagVN\Fpt\TechAPI\Auth;
+namespace DiagVN\Services\Fpt\TechAPI\Auth;
 
-
-use DiagVN\Fpt\TechAPI\Constant;
+use DiagVN\Services\Fpt\TechAPI\Constant;
 
 /**
  * Access token singleton class

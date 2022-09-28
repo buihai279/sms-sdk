@@ -1,35 +1,20 @@
 <?php
 
-namespace DiagVN\Fpt\TechAPI\Api;
+namespace DiagVN\Services\Fpt\TechAPI\Api;
 
-class SendMtActivePriority implements ApiInterface
+class CreateCampaign implements ApiInterface
 {
-    const ACTION = '/api/push-mtactive-priority';
-
-    /**
-     * @var int
-     */
-    protected $MOId       = 0;
+    const ACTION = '/api/create-campaign';
 
     /**
      * @var string
      */
-    protected $Telco      = '';
+    protected $CampaignName = '';
 
     /**
      * @var string
      */
-    protected $ServiceNum = '';
-
-    /**
-     * @var string
-     */
-    protected $Phone      = '';
-
-    /**
-     * @var string
-     */
-    protected $Syntax     = '';
+    protected $BrandName = '';
 
     /**
      * @var string
@@ -37,9 +22,14 @@ class SendMtActivePriority implements ApiInterface
     protected $Message    = '';
 
     /**
+     * @var string
+     */
+    protected $ScheduleTime = '';
+
+    /**
      * @var int
      */
-    protected $Priority   = 5;
+    protected $Quota    = 1;
 
 
     /**
@@ -77,7 +67,6 @@ class SendMtActivePriority implements ApiInterface
     public function toArray()
     {
         $arrData = get_object_vars($this);
-        $arrData['Message'] = base64_encode($arrData['Message']);
 
         return $arrData;
     }

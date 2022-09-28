@@ -1,6 +1,6 @@
 <?php
 
-namespace DiagVN\Fpt\TechAPI\Api;
+namespace DiagVN\Services\Fpt\TechAPI\Api;
 
 interface ApiInterface
 {

@@ -1,10 +1,10 @@
 <?php
 
-namespace DiagVN\Fpt\TechAPI\Api;
+namespace DiagVN\Services\Fpt\TechAPI\Api;
 
-class SendBrandnameOtp implements ApiInterface
+class SendBrandname implements ApiInterface
 {
-    const ACTION = '/api/push-brandname-otp';
+    const ACTION = '/api/push-brandname';
 
     /**
      * @var string

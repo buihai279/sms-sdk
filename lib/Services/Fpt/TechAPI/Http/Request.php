@@ -1,8 +1,8 @@
 <?php
 
-namespace DiagVN\Fpt\TechAPI\Http;
+namespace DiagVN\Services\Fpt\TechAPI\Http;
 
-use DiagVN\Fpt\TechAPI\Constant;
+use DiagVN\Services\Fpt\TechAPI\Constant;
 
 class Request
 {

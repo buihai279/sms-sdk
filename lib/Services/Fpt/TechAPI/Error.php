@@ -1,6 +1,6 @@
 <?php
 
-namespace DiagVN\Fpt\TechAPI;
+namespace DiagVN\Services\Fpt\TechAPI;
 
 class Error
 {

@@ -1,15 +1,21 @@
 <?php
 
-namespace DiagVN\Fpt\TechAPI\Api;
+namespace DiagVN\Services\Fpt\TechAPI\Api;
 
-class CancelAds implements ApiInterface
+class SendBrandnameAds implements ApiInterface
 {
-    const ACTION = '/api/cancel-ads';
+    const ACTION = '/api/push-brandname-ads';
+
 
     /**
      * @var string
      */
     protected $CampaignCode = '';
+
+    /**
+     * @var string
+     */
+    protected $PhoneList      = '';
 
 
     /**

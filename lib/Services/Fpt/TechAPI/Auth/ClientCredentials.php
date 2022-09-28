@@ -1,12 +1,12 @@
 <?php
 
-namespace DiagVN\Fpt\TechAPI\Auth;
+namespace DiagVN\Services\Fpt\TechAPI\Auth;
 
-use DiagVN\Fpt\TechAPI\Client;
-use DiagVN\Fpt\TechAPI\Api\ApiInterface;
-use DiagVN\Fpt\TechAPI\Http\Request;
-use DiagVN\Fpt\TechAPI\Http\Curl;
-use DiagVN\Fpt\TechAPI\Error;
+use DiagVN\Services\Fpt\TechAPI\Client;
+use DiagVN\Services\Fpt\TechAPI\Api\ApiInterface;
+use DiagVN\Services\Fpt\TechAPI\Http\Request;
+use DiagVN\Services\Fpt\TechAPI\Http\Curl;
+use DiagVN\Services\Fpt\TechAPI\Error;
 
 /**
  * Client credentials grant type

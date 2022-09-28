@@ -1,40 +1,15 @@
 <?php
 
-namespace DiagVN\Fpt\TechAPI\Api;
+namespace DiagVN\Services\Fpt\TechAPI\Api;
 
-class SendMtActive implements ApiInterface
+class CancelAds implements ApiInterface
 {
-    const ACTION = '/api/push-mtactive';
-
-    /**
-     * @var int
-     */
-    protected $MOId       = 0;
+    const ACTION = '/api/cancel-ads';
 
     /**
      * @var string
      */
-    protected $Telco      = '';
-
-    /**
-     * @var string
-     */
-    protected $ServiceNum = '';
-
-    /**
-     * @var string
-     */
-    protected $Phone      = '';
-
-    /**
-     * @var string
-     */
-    protected $Syntax     = '';
-
-    /**
-     * @var string
-     */
-    protected $Message    = '';
+    protected $CampaignCode = '';
 
 
     /**
@@ -72,7 +47,6 @@ class SendMtActive implements ApiInterface
     public function toArray()
     {
         $arrData = get_object_vars($this);
-        $arrData['Message'] = base64_encode($arrData['Message']);
 
         return $arrData;
     }
