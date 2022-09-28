@@ -31,8 +31,7 @@
   },
   "autoload": {
     "psr-4": {
-      "DiagVN\\": "lib/",
-      "DiagVN\\Fpt\\": "lib/fpt"
+      "DiagVN\\": "lib/"
     }
   },
   "extra": {
