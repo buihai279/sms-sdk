@@ -2,7 +2,7 @@
 
 namespace DiagVN;
 
-use DiagVN\Fpt\FptClient;
+use DiagVN\Services\Fpt\FptClient;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Contracts\Config\Repository as Config;
 
