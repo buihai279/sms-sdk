@@ -31,13 +31,13 @@
   },
   "autoload": {
     "psr-4": {
-      "MixPanel\\": "lib/"
+      "DiagVN\\": "lib/"
     }
   },
   "extra": {
     "laravel": {
       "providers": [
-        "MixPanel\\Providers\\MixPanelProvider"
+        "DiagVN\\Providers\\SmsServiceProvider"
       ]
     }
   }
