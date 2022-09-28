@@ -27,26 +27,6 @@ class Constant
      */
     private static $connectTimeout = 30;
 
-    /**
-     * Enable write log error
-     * 
-     * @var boolean
-     */
-    private static $enableLog      = true;
-
-    /**
-     * Log path
-     * 
-     * @var string
-     */
-    private static $logPath        = '';
-
-    /**
-     * File name of log
-     * 
-     * @var string
-     */
-    private static $logFileName    = 'tech-api-error.log';
 
     /**
      * Use cache access token
@@ -65,11 +45,8 @@ class Constant
     {
         // merge with default data
         $arrDefault = array(
-            'mode'            => self::$mode,
+            'mode'  => self::$mode,
             'connect_timeout' => self::$connectTimeout,
-            'enable_log'      => self::$enableLog,
-            'log_path'        => self::$logPath,
-            'log_filename'    => self::$logFileName,
             'enable_cache'    => self::$cache
         );
         $arrConfig = array_merge($arrDefault, $configs);
@@ -77,10 +54,7 @@ class Constant
         // set configs
         self::_setMode($arrConfig['mode']);
         self::$connectTimeout = $arrConfig['connect_timeout'];
-        self::$enableLog      = $arrConfig['enable_log'];
-        self::$logPath        = $arrConfig['log_path'];
-        self::$cache          = $arrConfig['enable_cache'];
-        self::$logFileName    = $arrConfig['log_filename'];
+        self::$cache  = $arrConfig['enable_cache'];
     }
 
 
@@ -160,31 +134,5 @@ class Constant
     public static function isCache()
     {
         return self::$cache;
-    }
-
-
-    /**
-     * Is write log when error
-     * 
-     * @return boolean
-     */
-    public static function isWriteLog()
-    {
-        return self::$enableLog;
-    }
-
-
-    /**
-     * Get log config
-     * 
-     * @return array
-     */
-    public static function getLogConfigs()
-    {
-        return array(
-            'enable_log'   => self::$enableLog,
-            'log_path'     => self::$logPath,
-            'log_filename' => self::$logFileName
-        );
     }
 }
