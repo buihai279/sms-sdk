@@ -18,7 +18,8 @@
     "guzzlehttp/guzzle": "^7.0.1",
     "psr/log": "^1.1 || ^2.0 || ^3.0",
     "illuminate/support": "^5.2|^6.0|^7.0|^8.0|^9.0",
-    "nesbot/carbon": "^2.53.1"
+    "nesbot/carbon": "^2.53.1",
+    "giggsey/libphonenumber-for-php": "^8.12"
   },
   "require-dev": {
     "ext-curl": "*",

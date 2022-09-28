@@ -39,4 +39,8 @@ return [
 
         'scopes' => ['send_brandname', 'send_brandname_otp']
     ],
+    'provider' => env('SMS_PROVIDER'),
+    'country_code' => env('DEFAULT_COUNTRY_CODE', 'VN'),
+    'log_sms' => env('LOG_SMS', false),
+    'whitelist' => env('SMS_WHITELIST', '')
 ];
