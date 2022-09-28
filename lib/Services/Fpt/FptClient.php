@@ -5,6 +5,8 @@ namespace DiagVN\Services\Fpt;
 use DiagVN\Fpt\TechAPI\Api\SendBrandnameOtp;
 use DiagVN\Fpt\TechAPI\Auth\AccessToken;
 use DiagVN\Fpt\TechAPI\Auth\ClientCredentials;
+use libphonenumber\PhoneNumberFormat;
+use libphonenumber\PhoneNumberUtil;
 use DiagVN\Fpt\TechAPI\Client;
 use DiagVN\Fpt\TechAPI\Constant;
 use DiagVN\Fpt\TechAPI\Exception;
@@ -12,7 +14,6 @@ use DiagVN\SmsClient;
 
 class FptClient implements SmsClient
 {
-
     /** @var string[] */
     private $config;
 
@@ -59,7 +60,7 @@ class FptClient implements SmsClient
      * @return mixed
      * @throws \Exception
      */
-    public function send($phone, $message)
+    public function send(string $phone, string $message)
     {
         if (empty($phone))
             throw new \Exception("Please provide phone number");
@@ -89,5 +90,20 @@ class FptClient implements SmsClient
         } catch (\Exception $ex) {
             throw new $ex;
         }
+    }
+
+    public function formatPhoneNumber(string $number): string
+    {
+        $phoneUtil = PhoneNumberUtil::getInstance();
+        $swissNumberProto = $phoneUtil->parse($number, config('sms.country_code'));
+        $nationalPhone = $phoneUtil->format($swissNumberProto, PhoneNumberFormat::INTERNATIONAL);
+        $countryCode = $phoneUtil->getCountryCodeForRegion(config('sms.country_code'));
+        if (strpos($nationalPhone, '0') === 0) {
+            $nationalPhone = $countryCode . mb_substr($nationalPhone, 1, strlen($nationalPhone) - 1);
+        }
+        $number = str_replace('+', '', $nationalPhone);
+        $number = str_replace(' ', '', $number);
+
+        return $number;
     }
 }

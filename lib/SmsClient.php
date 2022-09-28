@@ -12,5 +12,7 @@ interface SmsClient
      * @return mixed
      * @throws \Exception
      */
-    public function send($phone, $message);
+    public function send(string $phone, string $message);
+
+    public function formatPhoneNumber(string $phone): string;
 }
