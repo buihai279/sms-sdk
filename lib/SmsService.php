@@ -11,10 +11,14 @@ class SmsService
     public function sendMessage(
         string $number,
         string $message,
-        bool $isCheckWhiteList = true
+        bool $isCheckWhiteList = false,
+        string $provider = null
     ): ?array {
         try {
-            $service = app('sms')->get(config('sms.provider'));
+            if(!$provider) {
+                $provider = config('sms.provider');
+            }
+            $service = app('sms')->get($provider);
             $number = $service->formatPhoneNumber($number);
             $canSendMessage = $this->canSendMessage($number);
             if ($isCheckWhiteList && !$canSendMessage) {
@@ -52,12 +56,14 @@ class SmsService
         array $response,
         bool $isSuccess = true
     ) {
-        DB::table('sms_logs')->insert([
-            'phone_number' => $number,
-            'is_success' => $isSuccess,
-            'response' => json_encode($response),
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now(),
-        ]);
+        if (config('sms.log_sms')) {
+            DB::table('sms_logs')->insert([
+                'phone_number' => $number,
+                'is_success' => $isSuccess,
+                'response' => json_encode($response),
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+            ]);
+        }
     }
 }
