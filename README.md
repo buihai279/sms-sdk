@@ -29,3 +29,16 @@ SMS_PROVIDER: SMS service provider name
 SMS_WHITELIST: List phone number was allowed to send SMS in test and dev enviroment
 
 LOG_SMS: true/false, set enable log sms
+
+# 3. Example
+
+    use DiagVN\SmsService;
+    try {
+        $service = app(SmsService::class);
+        $service->sendMessage(
+            +840909111111,
+            'Test Send SMS'
+        );
+    } catch (Exception $ex) {
+        report($ex);
+    }
