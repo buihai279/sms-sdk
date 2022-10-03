@@ -88,7 +88,7 @@ class FptClient implements SmsClient
 
             return $arrResponse;
         } catch (\Exception $ex) {
-            throw new $ex;
+            throw new Exception($ex->getMessage());
         }
     }
 
