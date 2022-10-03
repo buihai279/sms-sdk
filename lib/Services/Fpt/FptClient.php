@@ -2,14 +2,14 @@
 
 namespace DiagVN\Services\Fpt;
 
-use DiagVN\Fpt\TechAPI\Api\SendBrandnameOtp;
-use DiagVN\Fpt\TechAPI\Auth\AccessToken;
-use DiagVN\Fpt\TechAPI\Auth\ClientCredentials;
+use DiagVN\Services\Fpt\TechAPI\Api\SendBrandnameOtp;
+use DiagVN\Services\Fpt\TechAPI\Auth\AccessToken;
+use DiagVN\Services\Fpt\TechAPI\Auth\ClientCredentials;
 use libphonenumber\PhoneNumberFormat;
 use libphonenumber\PhoneNumberUtil;
-use DiagVN\Fpt\TechAPI\Client;
-use DiagVN\Fpt\TechAPI\Constant;
-use DiagVN\Fpt\TechAPI\Exception;
+use DiagVN\Services\Fpt\TechAPI\Client;
+use DiagVN\Services\Fpt\TechAPI\Constant;
+use DiagVN\Services\Fpt\TechAPI\Exception;
 use DiagVN\SmsClient;
 
 class FptClient implements SmsClient

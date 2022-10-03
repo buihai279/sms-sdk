@@ -2,8 +2,6 @@
 
 namespace DiagVN;
 
-use DiagVN\Fpt\TechAPI\Exception;
-
 interface SmsClient
 {
     /**
