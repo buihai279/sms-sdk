@@ -78,7 +78,7 @@ class SmsServiceProvider extends ServiceProvider
         }
 
         $basicCredentials = null;
-        $options = $config->get(['sms.fpt.brand_name', 'sms.fpt.scopes', 'sms.fpt.mode']);
+        $options = $config->get(['sms.fpt.brand_name', 'sms.fpt.scopes', 'sms.fpt.mode', 'sms.fpt.timeout']);
 
         if ($this->fptConfigHas('client_id')) {
             $basicCredentials = $this->createBasicCredentials(
