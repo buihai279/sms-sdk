@@ -70,7 +70,7 @@ class FptClient implements SmsClient
 
         $arrMessage = [
             'Phone' => $phone,
-            'BrandName' => $this->config['fpt.brand_name'],
+            'BrandName' => $this->config['sms.fpt.brand_name'],
             'Message' => $message
         ];
 
