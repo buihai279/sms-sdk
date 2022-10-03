@@ -50,7 +50,7 @@ class SmsService
     private function logSms(
         string $number,
         array $response,
-        bool $isSuccess = true,
+        bool $isSuccess = true
     ) {
         DB::table('sms_logs')->insert([
             'phone_number' => $number,
