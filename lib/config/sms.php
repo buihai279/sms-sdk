@@ -37,7 +37,8 @@ return [
         |--------------------------------------------------------------------------
         */
 
-        'scopes' => ['send_brandname', 'send_brandname_otp']
+        'scopes' => ['send_brandname', 'send_brandname_otp'],
+        'timeout' => env('SMS_TIMEOUT', 15)
     ],
     'provider' => env('SMS_PROVIDER'),
     'country_code' => env('DEFAULT_COUNTRY_CODE', 'VN'),

@@ -32,7 +32,7 @@ class SmsService
         } catch (\Exception $ex) {
             Log::error("Can not send message FPT: " . $number, ['message' => $message, 'error' => $ex->getMessage()]);
             report($ex);
-            $this->logSms($number, $response, false);
+            $this->logSms($number, ['message' => $message, 'error' => $ex->getMessage()], false);
             return [];
         }
     }

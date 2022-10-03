@@ -15,7 +15,7 @@ class Curl
         $client = new Client(
             [
                 'verify' => false,
-                'timeout'  => Constant::getTimeout(),
+                'timeout' => Constant::getTimeout(),
             ]
         );
         $requestHeaders = $request->getRequestHeaders();
@@ -27,7 +27,7 @@ class Curl
             $request->getUrl(),
             [
                 'json' => $request->getPostBody(),
-                'headers' =>  $requestHeaders,
+                'headers' => $requestHeaders,
             ]
         );
 

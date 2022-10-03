@@ -12,11 +12,11 @@ final class AccessToken
 
     private $access_token = '';
 
-    private $expired      = 0;
+    private $expired = 0;
 
-    private $token_type   = '';
+    private $token_type = '';
 
-    private $scope        = '';
+    private $scope = '';
 
     private $refresh_token = '';
 
@@ -39,7 +39,7 @@ final class AccessToken
 
     /**
      * Get class instance
-     * 
+     *
      * @return \TechAPI\Auth\AccessToken
      */
     public static function getInstance()
@@ -54,7 +54,7 @@ final class AccessToken
 
     /**
      * Set access token When request token success
-     * 
+     *
      * @param array $arrData
      */
     public function setAccessToken($arrData)
@@ -72,7 +72,7 @@ final class AccessToken
 
     /**
      * Private set access token
-     * 
+     *
      * @param array $arrData
      */
     private function _setAccessToken($arrData)
@@ -87,7 +87,7 @@ final class AccessToken
 
     /**
      * Get access token data
-     * 
+     *
      * @return array
      */
     private function _getAccessTokenData()
@@ -98,7 +98,7 @@ final class AccessToken
 
     /**
      * Get access token
-     * 
+     *
      * @return string|NULL
      */
     public function getAccessToken()
@@ -113,7 +113,7 @@ final class AccessToken
 
     /**
      * Convert class to string (echo, parse string)
-     * 
+     *
      * @return string
      */
     public function __toString()
@@ -128,10 +128,10 @@ final class AccessToken
     public function clear()
     {
         unset($_SESSION[self::SESSION_NAME]);
-        $this->access_token  = '';
-        $this->expired       = 0;
+        $this->access_token = '';
+        $this->expired = 0;
         $this->refresh_token = '';
-        $this->scope         = '';
-        $this->token_type    = '';
+        $this->scope = '';
+        $this->token_type = '';
     }
 }

@@ -14,7 +14,7 @@ class CancelAds implements ApiInterface
 
     /**
      * Construction and set data
-     * 
+     *
      * @param array $data
      */
     public function __construct(array $data)
@@ -30,7 +30,7 @@ class CancelAds implements ApiInterface
 
     /**
      * Action to request to api
-     * 
+     *
      * @return string;
      */
     public function getAction()
@@ -41,7 +41,7 @@ class CancelAds implements ApiInterface
 
     /**
      * Get array data
-     * 
+     *
      * @return array
      */
     public function toArray()
@@ -54,7 +54,7 @@ class CancelAds implements ApiInterface
 
     /**
      * Get param. Ex: getTelco()
-     * 
+     *
      * @param string $name
      * @param mixed $args
      * @return mixed

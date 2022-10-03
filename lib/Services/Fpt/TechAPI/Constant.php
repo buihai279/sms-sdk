@@ -4,7 +4,7 @@ namespace DiagVN\Services\Fpt\TechAPI;
 
 class Constant
 {
-    const MODE_LIVE    = 'live';
+    const MODE_LIVE = 'live';
     const MODE_SANDBOX = 'sandbox';
 
     /**
@@ -14,12 +14,12 @@ class Constant
 
     /**
      * Server Endpoint
-     * 
+     *
      * @var array
      */
     private static $endpoint = array(
-        self::MODE_LIVE     => 'http://service.sms.fpt.net',
-        self::MODE_SANDBOX  => 'http://sandbox.sms.fpt.net'
+        self::MODE_LIVE => 'http://service.sms.fpt.net',
+        self::MODE_SANDBOX => 'http://sandbox.sms.fpt.net'
     );
 
     /**
@@ -30,37 +30,37 @@ class Constant
 
     /**
      * Use cache access token
-     * 
+     *
      * @var boolean
      */
-    private static $cache          = true;
+    private static $cache = true;
 
 
     /**
      * Set configs
-     * 
+     *
      * @param array $configs
      */
     public static function configs(array $configs)
     {
         // merge with default data
         $arrDefault = array(
-            'mode'  => self::$mode,
+            'mode' => self::$mode,
             'connect_timeout' => self::$connectTimeout,
-            'enable_cache'    => self::$cache
+            'enable_cache' => self::$cache
         );
         $arrConfig = array_merge($arrDefault, $configs);
 
         // set configs
         self::_setMode($arrConfig['mode']);
         self::$connectTimeout = $arrConfig['connect_timeout'];
-        self::$cache  = $arrConfig['enable_cache'];
+        self::$cache = $arrConfig['enable_cache'];
     }
 
 
     /**
      * Set mode
-     * 
+     *
      * @param string $mode
      */
     private static function _setMode($mode)
@@ -73,7 +73,7 @@ class Constant
 
     /**
      * Is live mode
-     * 
+     *
      * @return boolean
      */
     public static function isLive()
@@ -84,7 +84,7 @@ class Constant
 
     /**
      * Is sandbox mode
-     * 
+     *
      * @return boolean
      */
     public static function isSandbox()
@@ -95,7 +95,7 @@ class Constant
 
     /**
      * Get mode
-     * 
+     *
      * @return string
      */
     public static function getMode()
@@ -106,7 +106,7 @@ class Constant
 
     /**
      * Get endpoint url
-     * 
+     *
      * @return string
      */
     public static function getEndpoint()
@@ -117,7 +117,7 @@ class Constant
 
     /**
      * Get curl connect timeout
-     * 
+     *
      * @return number
      */
     public static function getTimeout()
@@ -128,7 +128,7 @@ class Constant
 
     /**
      * is enable cache
-     * 
+     *
      * @return boolean
      */
     public static function isCache()

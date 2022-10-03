@@ -9,7 +9,7 @@ class SendBrandnameOtpPriority implements ApiInterface
     /**
      * @var string
      */
-    protected $Phone      = '';
+    protected $Phone = '';
 
     /**
      * @var string
@@ -19,16 +19,16 @@ class SendBrandnameOtpPriority implements ApiInterface
     /**
      * @var string
      */
-    protected $Message    = '';
+    protected $Message = '';
 
-    /**     
+    /**
      * @var int
      */
-    protected $Priority  = 5;
+    protected $Priority = 5;
 
     /**
      * Construction and set data
-     * 
+     *
      * @param array $data
      */
     public function __construct(array $data)
@@ -44,7 +44,7 @@ class SendBrandnameOtpPriority implements ApiInterface
 
     /**
      * Action to request to api
-     * 
+     *
      * @return string;
      */
     public function getAction()
@@ -55,7 +55,7 @@ class SendBrandnameOtpPriority implements ApiInterface
 
     /**
      * Get array data
-     * 
+     *
      * @return array
      */
     public function toArray()
@@ -69,7 +69,7 @@ class SendBrandnameOtpPriority implements ApiInterface
 
     /**
      * Get param. Ex: getTelco()
-     * 
+     *
      * @param string $name
      * @param mixed $args
      * @return mixed

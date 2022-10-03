@@ -19,7 +19,7 @@ class CreateCampaign implements ApiInterface
     /**
      * @var string
      */
-    protected $Message    = '';
+    protected $Message = '';
 
     /**
      * @var string
@@ -29,12 +29,12 @@ class CreateCampaign implements ApiInterface
     /**
      * @var int
      */
-    protected $Quota    = 1;
+    protected $Quota = 1;
 
 
     /**
      * Construction and set data
-     * 
+     *
      * @param array $data
      */
     public function __construct(array $data)
@@ -50,7 +50,7 @@ class CreateCampaign implements ApiInterface
 
     /**
      * Action to request to api
-     * 
+     *
      * @return string;
      */
     public function getAction()
@@ -61,7 +61,7 @@ class CreateCampaign implements ApiInterface
 
     /**
      * Get array data
-     * 
+     *
      * @return array
      */
     public function toArray()
@@ -74,7 +74,7 @@ class CreateCampaign implements ApiInterface
 
     /**
      * Get param. Ex: getTelco()
-     * 
+     *
      * @param string $name
      * @param mixed $args
      * @return mixed

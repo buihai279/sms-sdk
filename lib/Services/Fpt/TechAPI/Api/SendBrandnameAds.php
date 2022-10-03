@@ -15,12 +15,12 @@ class SendBrandnameAds implements ApiInterface
     /**
      * @var string
      */
-    protected $PhoneList      = '';
+    protected $PhoneList = '';
 
 
     /**
      * Construction and set data
-     * 
+     *
      * @param array $data
      */
     public function __construct(array $data)
@@ -36,7 +36,7 @@ class SendBrandnameAds implements ApiInterface
 
     /**
      * Action to request to api
-     * 
+     *
      * @return string;
      */
     public function getAction()
@@ -47,7 +47,7 @@ class SendBrandnameAds implements ApiInterface
 
     /**
      * Get array data
-     * 
+     *
      * @return array
      */
     public function toArray()
@@ -60,7 +60,7 @@ class SendBrandnameAds implements ApiInterface
 
     /**
      * Get param. Ex: getTelco()
-     * 
+     *
      * @param string $name
      * @param mixed $args
      * @return mixed

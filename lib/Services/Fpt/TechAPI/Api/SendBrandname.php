@@ -9,7 +9,7 @@ class SendBrandname implements ApiInterface
     /**
      * @var string
      */
-    protected $Phone      = '';
+    protected $Phone = '';
 
     /**
      * @var string
@@ -19,12 +19,12 @@ class SendBrandname implements ApiInterface
     /**
      * @var string
      */
-    protected $Message    = '';
+    protected $Message = '';
 
 
     /**
      * Construction and set data
-     * 
+     *
      * @param array $data
      */
     public function __construct(array $data)
@@ -40,7 +40,7 @@ class SendBrandname implements ApiInterface
 
     /**
      * Action to request to api
-     * 
+     *
      * @return string;
      */
     public function getAction()
@@ -51,7 +51,7 @@ class SendBrandname implements ApiInterface
 
     /**
      * Get array data
-     * 
+     *
      * @return array
      */
     public function toArray()
@@ -65,7 +65,7 @@ class SendBrandname implements ApiInterface
 
     /**
      * Get param. Ex: getTelco()
-     * 
+     *
      * @param string $name
      * @param mixed $args
      * @return mixed

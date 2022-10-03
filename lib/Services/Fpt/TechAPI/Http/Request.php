@@ -9,7 +9,7 @@ class Request
     const CONTENT_TYPE_JSON = 'application/json';
 
     protected $endpoint = '';
-    protected $action   = '';
+    protected $action = '';
     protected $method = 'POST';
     protected $params = array();
     protected $headers = array();
@@ -27,7 +27,7 @@ class Request
 
     /**
      * Set param request
-     * 
+     *
      * @param string $name
      * @param string $val
      * @return \TechAPI\Http\Request
@@ -41,7 +41,7 @@ class Request
 
     /**
      * Set params request
-     * 
+     *
      * @param array $params
      * @return \TechAPI\Http\Request
      */
@@ -54,7 +54,7 @@ class Request
 
     /**
      * Add params to request
-     * 
+     *
      * @param array $params
      * @return \TechAPI\Http\Request
      */
@@ -67,7 +67,7 @@ class Request
 
     /**
      * Set request action
-     * 
+     *
      * @param string $action
      * @return \TechAPI\Http\Request
      */
@@ -80,7 +80,7 @@ class Request
 
     /**
      * Get request body params
-     * 
+     *
      * @return string|multitype:
      */
     public function getPostBody()
@@ -91,7 +91,7 @@ class Request
 
     /**
      * Get request header
-     * 
+     *
      * @return array
      */
     public function getRequestHeaders()
@@ -102,7 +102,7 @@ class Request
 
     /**
      * Get request url
-     * 
+     *
      * @return string
      */
     public function getUrl()
@@ -113,7 +113,7 @@ class Request
 
     /**
      * Get request method
-     * 
+     *
      * @return string
      */
     public function getRequestMethod()
@@ -124,7 +124,7 @@ class Request
 
     /**
      * Get user agent
-     * 
+     *
      * @return string
      */
     public function getUserAgent()

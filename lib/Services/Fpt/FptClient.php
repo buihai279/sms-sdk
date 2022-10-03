@@ -32,8 +32,8 @@ class FptClient implements SmsClient
 
         // config api
         Constant::configs(array(
-            'mode'            => $options['sms.fpt.mode'],
-            'connect_timeout' => 15,
+            'mode' => $options['sms.fpt.mode'],
+            'connect_timeout' => $options['sms.fpt.timeout'],
         ));
     }
 
@@ -69,16 +69,16 @@ class FptClient implements SmsClient
             throw new \Exception("Please provide message");
 
         $arrMessage = [
-            'Phone'      => $phone,
-            'BrandName'  => $this->config['fpt.brand_name'],
-            'Message'    => $message
+            'Phone' => $phone,
+            'BrandName' => $this->config['fpt.brand_name'],
+            'Message' => $message
         ];
 
         $apiSendBrandName = new SendBrandnameOtp($arrMessage);
 
         try {
-            $oGrantType      = $this->getTechAuthorization();
-            $arrResponse     = $oGrantType->execute($apiSendBrandName);
+            $oGrantType = $this->getTechAuthorization();
+            $arrResponse = $oGrantType->execute($apiSendBrandName);
 
             if (!empty($arrResponse['error'])) {
                 AccessToken::getInstance()->clear();

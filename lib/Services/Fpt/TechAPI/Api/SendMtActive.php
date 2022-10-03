@@ -9,12 +9,12 @@ class SendMtActive implements ApiInterface
     /**
      * @var int
      */
-    protected $MOId       = 0;
+    protected $MOId = 0;
 
     /**
      * @var string
      */
-    protected $Telco      = '';
+    protected $Telco = '';
 
     /**
      * @var string
@@ -24,22 +24,22 @@ class SendMtActive implements ApiInterface
     /**
      * @var string
      */
-    protected $Phone      = '';
+    protected $Phone = '';
 
     /**
      * @var string
      */
-    protected $Syntax     = '';
+    protected $Syntax = '';
 
     /**
      * @var string
      */
-    protected $Message    = '';
+    protected $Message = '';
 
 
     /**
      * Construction and set data
-     * 
+     *
      * @param array $data
      */
     public function __construct(array $data)
@@ -55,7 +55,7 @@ class SendMtActive implements ApiInterface
 
     /**
      * Action to request to api
-     * 
+     *
      * @return string;
      */
     public function getAction()
@@ -66,7 +66,7 @@ class SendMtActive implements ApiInterface
 
     /**
      * Get array data
-     * 
+     *
      * @return array
      */
     public function toArray()
@@ -80,7 +80,7 @@ class SendMtActive implements ApiInterface
 
     /**
      * Get param. Ex: getTelco()
-     * 
+     *
      * @param string $name
      * @param mixed $args
      * @return mixed

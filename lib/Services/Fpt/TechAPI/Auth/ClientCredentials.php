@@ -13,22 +13,22 @@ class ClientCredentials
     const GRANT_TYPE = 'client_credentials';
 
     protected $client = null;
-    protected $curl   = null;
+    protected $curl = null;
 
     /**
      * Construction
-     * 
+     *
      * @param Client $client
      */
     public function __construct(Client $client)
     {
         $this->client = $client;
-        $this->curl   = new Curl();
+        $this->curl = new Curl();
     }
 
     /**
      * Request token to authorization
-     * 
+     *
      * @return string
      */
     public function getAccessToken()
@@ -36,7 +36,7 @@ class ClientCredentials
         $oAccessToken = AccessToken::getInstance();
 
         // read access token in session.
-        $accessToken  = $oAccessToken->getAccessToken();
+        $accessToken = $oAccessToken->getAccessToken();
         if ($accessToken) {
             return $accessToken;
         }
@@ -52,7 +52,7 @@ class ClientCredentials
         if ($accessToken && !isset($accessToken['error'])) {
             // request done and no error
             $oAccessToken->setAccessToken($accessToken);
-            return (string) $oAccessToken;
+            return (string)$oAccessToken;
         }
 
         // throw error
@@ -62,7 +62,7 @@ class ClientCredentials
 
     /**
      * Execute access to api
-     * 
+     *
      * @param ApiInterface $api
      * @return mixed
      */

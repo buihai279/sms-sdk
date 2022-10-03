@@ -6,21 +6,21 @@ class Client
 {
     /**
      * Client ID
-     * 
+     *
      * @var string
      */
     protected $client_id = '';
 
     /**
      * Client secret
-     * 
+     *
      * @var string
      */
     protected $client_secret = '';
 
     /**
      * Scopes
-     * 
+     *
      * @var array
      */
     protected $scopes = [];
@@ -28,7 +28,7 @@ class Client
 
     /**
      * Construction and configs client
-     * 
+     *
      * @param string $client_id
      * @param string $client_secret
      * @param array $scopes
@@ -54,7 +54,7 @@ class Client
 
     /**
      * Get client ID
-     * 
+     *
      * @return string
      */
     public function getClientID()
@@ -65,7 +65,7 @@ class Client
 
     /**
      * Get client secret
-     * 
+     *
      * @return string
      */
     public function getClientSecret()
@@ -76,7 +76,7 @@ class Client
 
     /**
      * Get Client Scopes
-     * 
+     *
      * @return array
      */
     public function getScopes()
@@ -87,7 +87,7 @@ class Client
 
     /**
      * Get Auth info
-     * 
+     *
      * @return array
      */
     public function getAuth()
@@ -97,10 +97,10 @@ class Client
         }
 
         return array(
-            'client_id'     => $this->client_id,
+            'client_id' => $this->client_id,
             'client_secret' => $this->client_secret,
-            'scope'         => implode(' ', $this->scopes),
-            'session_id'    => session_id(),
+            'scope' => implode(' ', $this->scopes),
+            'session_id' => session_id(),
         );
     }
 }
