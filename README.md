@@ -19,7 +19,7 @@ Add config to .env
     FPT_BRAND_NAME=
     FPT_CLIENT_ID=
     FPT_CLIENT_SECRET=
-    FPT_MODE=
+    SMS_MODE=
     SMS_PROVIDER=
     SMS_WHITELIST=
     LOG_SMS=
