@@ -1,16 +1,16 @@
 {
-  "name": "diagvn/sms-sdk",
-  "description": "FPT SMS vendor custom by Diag",
-  "keywords": [
-    "framework"
-  ],
-  "license": "MIT",
-  "authors": [
-    {
-      "name": "Bradley Nguyen",
-      "email": "giang.nguyen@diag.vn",
-      "homepage": "https://github.com/GiangBeo"
-    }
+    "name": "buihai279/sms-sdk",
+    "description": "FPT SMS vendor custom by Diag, haibv custom",
+    "keywords": [
+        "framework"
+    ],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Bradley Nguyen",
+            "email": "giang.nguyen@diag.vn",
+            "homepage": "https://github.com/GiangBeo"
+        }
   ],
   "require": {
     "php": "^7.2.5 || ^8.0",

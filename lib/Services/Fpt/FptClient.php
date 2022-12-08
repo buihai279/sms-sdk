@@ -5,12 +5,12 @@ namespace DiagVN\Services\Fpt;
 use DiagVN\Services\Fpt\TechAPI\Api\SendBrandnameOtp;
 use DiagVN\Services\Fpt\TechAPI\Auth\AccessToken;
 use DiagVN\Services\Fpt\TechAPI\Auth\ClientCredentials;
-use libphonenumber\PhoneNumberFormat;
-use libphonenumber\PhoneNumberUtil;
 use DiagVN\Services\Fpt\TechAPI\Client;
 use DiagVN\Services\Fpt\TechAPI\Constant;
 use DiagVN\Services\Fpt\TechAPI\Exception;
 use DiagVN\SmsClient;
+use libphonenumber\PhoneNumberFormat;
+use libphonenumber\PhoneNumberUtil;
 
 class FptClient implements SmsClient
 {
@@ -98,12 +98,9 @@ class FptClient implements SmsClient
         $swissNumberProto = $phoneUtil->parse($number, config('sms.country_code'));
         $nationalPhone = $phoneUtil->format($swissNumberProto, PhoneNumberFormat::INTERNATIONAL);
         $countryCode = $phoneUtil->getCountryCodeForRegion(config('sms.country_code'));
-        if (strpos($nationalPhone, '0') === 0) {
+        if (str_starts_with($nationalPhone, '0')) {
             $nationalPhone = $countryCode . mb_substr($nationalPhone, 1, strlen($nationalPhone) - 1);
         }
-        $number = str_replace('+', '', $nationalPhone);
-        $number = str_replace(' ', '', $number);
-
-        return $number;
+        return str_replace(array('+', ' '), '', $nationalPhone);
     }
 }
